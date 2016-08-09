@@ -1,0 +1,49 @@
+{
+  "name": "agnostic",
+  "version": "1.0.0-rc1",
+  "description": "A library that allows other projects to be agnostic of particular http server implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "true || tape test/test-*.js || tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexindigo/agnostic.git"
+  },
+  "keywords": [
+    "agnostic",
+    "server",
+    "http",
+    "https",
+    "express",
+    "restify",
+    "hapi"
+  ],
+  "author": "Alex Indigo <iam@alexindigo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexindigo/agnostic/issues"
+  },
+  "homepage": "https://github.com/alexindigo/agnostic#readme",
+  "dependencies": {
+    "bole": "^3.0.1",
+    "deeply": "^2.0.1",
+    "precise-typeof": "^1.0.2",
+    "raw-body": "^2.1.7"
+  },
+  "devDependencies": {
+    "asynckit": "^0.4.0",
+    "body-parser": "^1.15.2",
+    "coveralls": "^2.11.12",
+    "eslint": "^3.2.2",
+    "express": "^4.14.0",
+    "glob": "^7.0.5",
+    "hapi": "^14.1.0",
+    "hyperquest": "^2.0.0",
+    "istanbul": "^0.4.4",
+    "pre-commit": "^1.1.3",
+    "restify": "^4.1.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0"
+  }
+}
