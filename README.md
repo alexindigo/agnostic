@@ -3,11 +3,11 @@
 A library that allows other projects to be agnostic of particular http server implementation.
 
 [![Linux Build](https://img.shields.io/travis/alexindigo/agnostic/v1.0.0.svg?label=linux:0.12-6.x&style=flat)](https://travis-ci.org/alexindigo/agnostic)
-[![Windows Build](https://img.shields.io/appveyor/ci/alexindigo/agnostic/v1.0.0.svg?label=windows:0.12-6.x&style=flat)](https://ci.appveyor.com/project/alexindigo/agnostic)
+<!--  [![Windows Build](https://img.shields.io/appveyor/ci/alexindigo/agnostic/v1.0.0.svg?label=windows:0.12-6.x&style=flat)](https://ci.appveyor.com/project/alexindigo/agnostic) -->
 
 [![Coverage Status](https://img.shields.io/coveralls/alexindigo/agnostic/v1.0.0.svg?label=code+coverage&style=flat)](https://coveralls.io/github/alexindigo/agnostic?branch=master)
 [![Dependency Status](https://img.shields.io/david/alexindigo/agnostic/v1.0.0.svg?style=flat)](https://david-dm.org/alexindigo/agnostic)
-[![bitHound Overall Score](https://www.bithound.io/github/alexindigo/agnostic/badges/score.svg)](https://www.bithound.io/github/alexindigo/agnostic)
+<!-- [![bitHound Overall Score](https://www.bithound.io/github/alexindigo/agnostic/badges/score.svg)](https://www.bithound.io/github/alexindigo/agnostic) -->
 
 [![express](https://img.shields.io/badge/express-3.x--4.x-brightgreen.svg?style=flat)](http://expressjs.com)
 [![restify](https://img.shields.io/badge/restify-2.x--4.x-brightgreen.svg?style=flat)](http://restify.com)
@@ -26,23 +26,90 @@ npm install --save agnostic
 
 ## Example
 
+### Your Library
+
 ```javascript
 var agnostic = require('agnostic');
-var express  = require('express');
+
+module.exports = agnostic(myRequestHandler);
+
+function myRequestHandler(request, respond)
+{
+  // do cool thing
+  // `respond` is a function with the following signature:
+  // `respond([code], [content[, options]]);`
+}
+```
+
+### Express [![express](https://img.shields.io/badge/express-3.x--4.x-brightgreen.svg?style=flat)](http://expressjs.com)
+
+```javascript
+var express = require('express');
+var coolLib = require('above-cool-lib');
 
 var app = express();
 
-app.all('/my-endpoint', agnostic(function(request, respond)
-{
-  // `respond` is a function with the following signature:
-  // `respond([code], [content[, options]]);`
-}));
+app.all('/my-endpoint', coolLib);
 
 // start the server
-app.listen(common.server.port);
+app.listen(1337);
 ```
 
-TBW.
+### Restify [![restify](https://img.shields.io/badge/restify-2.x--4.x-brightgreen.svg?style=flat)](http://restify.com)
+
+
+```javascript
+var restify = require('restify');
+var coolLib = require('above-cool-lib');
+
+var server = restify.createServer();
+
+server.get('/my-endpoint', coolLib);
+server.post('/my-endpoint', coolLib);
+
+// start the server
+server.listen(1337);
+```
+
+### Hapi [![hapi](https://img.shields.io/badge/hapi-10.x--14.x-brightgreen.svg?lstyle=flat)](http://hapijs.com)
+
+```javascript
+var restify = require('restify');
+var coolLib = require('above-cool-lib');
+
+var server = new Hapi.Server();
+
+// setup hapi server
+server.connection({ port: 1337 });
+
+server.route({
+  method : ['GET', 'POST'], // Hapi uses GET handler for HEAD requests
+  path   : '/my-endpoint',
+  handler: coolLib
+});
+
+// start the server
+server.start({});
+
+```
+
+### http [![http](https://img.shields.io/badge/http-0.12.x--6.x-brightgreen.svg?style=flat)](https://nodejs.org/api/http.html)
+
+```javascript
+  var http    = require('http');
+  var coolLib = require('above-cool-lib');
+
+  server = http.createServer(coolLib);
+
+  // start the server
+  server.listen(1337);
+```
+
+## Want to Know More?
+
+More examples can be found in [test folder](test/).
+
+Or open an [issue](https://github.com/alexindigo/agnostic/issues) with questions and/or suggestions.
 
 ## License
 
