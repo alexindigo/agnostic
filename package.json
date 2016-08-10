@@ -11,7 +11,8 @@
     "get-version": "node -e \"console.log(require('./package.json').version)\"",
     "update-readme": "sed -i.bak 's/\\/master\\.svg/\\/v'$(npm --silent run get-version)'.svg/g' README.md",
     "restore-readme": "mv README.md.bak README.md",
-    "prepublish": "in-publish && npm run update-readme && npm run restore-readme || true"
+    "prepublish": "in-publish && npm run update-readme || true",
+    "postpublish": "npm run restore-readme"
   },
   "pre-commit": [
     "lint",
