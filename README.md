@@ -2,6 +2,20 @@
 
 A library that allows other projects to be agnostic of particular http server implementation.
 
+[![Linux Build](https://img.shields.io/travis/alexindigo/agnostic/v1.0.0.svg?label=linux:0.12-6.x&style=flat)](https://travis-ci.org/alexindigo/agnostic)
+[![Windows Build](https://img.shields.io/appveyor/ci/alexindigo/agnostic/v1.0.0.svg?label=windows:0.12-6.x&style=flat)](https://ci.appveyor.com/project/alexindigo/agnostic)
+
+[![Coverage Status](https://img.shields.io/coveralls/alexindigo/agnostic/v1.0.0.svg?label=code+coverage&style=flat)](https://coveralls.io/github/alexindigo/agnostic?branch=master)
+[![Dependency Status](https://img.shields.io/david/alexindigo/agnostic/v1.0.0.svg?style=flat)](https://david-dm.org/alexindigo/agnostic)
+[![bitHound Overall Score](https://www.bithound.io/github/alexindigo/agnostic/badges/score.svg)](https://www.bithound.io/github/alexindigo/agnostic)
+
+[![express](https://img.shields.io/badge/express-3.x--4.x-brightgreen.svg?style=flat)](http://expressjs.com)
+[![restify](https://img.shields.io/badge/restify-2.x--4.x-brightgreen.svg?style=flat)](http://restify.com)
+[![hapi](https://img.shields.io/badge/hapi-10.x--14.x-brightgreen.svg?lstyle=flat)](http://hapijs.com)
+[![http](https://img.shields.io/badge/http-0.12.x--6.x-brightgreen.svg?style=flat)](https://nodejs.org/api/http.html)
+
+<!-- [![Readme](https://img.shields.io/badge/readme-tested-brightgreen.svg?style=flat)](https://www.npmjs.com/package/reamde) -->
+
 *Notice of change of ownership: Starting version 1.0.0 this package has changed it's owner and goals. Old version (0.0.0) is still available on npm via `npm install agnostic@0.0.0` or on [github](https://github.com/dtudury/agnostic). Thank you.*
 
 ## Install

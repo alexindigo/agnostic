@@ -9,8 +9,7 @@
     "win-test": "tape test/test-*.js | tap-spec",
     "debug": "tape test/test-*.js | tap-spec"
   },
-  "pre-commit":
-  [
+  "pre-commit": [
     "lint",
     "test"
   ],
@@ -47,7 +46,7 @@
     "eslint": "^3.2.2",
     "express": "^4.14.0",
     "glob": "^7.0.5",
-    "hapi": "^14.1.0",
+    "hapi": "^10.5.0",
     "hyperquest": "^2.0.0",
     "istanbul": "^0.4.4",
     "pre-commit": "^1.1.3",
