@@ -1,5 +1,4 @@
-var path   = require('path')
-  , Hapi   = require('hapi')
+var Hapi   = require('hapi')
   , tape   = require('tape')
   , common = require('./common.js')
   , agnostic   = require('../')
@@ -18,7 +17,7 @@ tape.test('hapi as route, with default body parser', function(t)
     // plug-in fbbot
     server.route({
       method : ['GET', 'POST'], // Hapi uses GET handler for HEAD requests
-      path   : path.join(common.server.endpoint, id),
+      path   : [common.server.endpoint, id].join('/'),
       handler: agnostic(common.requests[id].requestHandler)
     });
   });

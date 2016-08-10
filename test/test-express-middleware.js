@@ -1,5 +1,4 @@
-var path       = require('path')
-  , express    = require('express')
+var express    = require('express')
   , bodyParser = require('body-parser')
   , tape       = require('tape')
   , common     = require('./common.js')
@@ -17,7 +16,7 @@ tape.test('express as middleware, no parser', function(t)
   // plug-in request handlers
   Object.keys(common.requests).forEach(function(id)
   {
-    app.use(path.join(common.server.endpoint, id), agnostic(common.requests[id].requestHandler));
+    app.use([common.server.endpoint, id].join('/'), agnostic(common.requests[id].requestHandler));
   });
 
   // start the server
@@ -38,7 +37,6 @@ tape.test('express as middleware, no parser', function(t)
 
 });
 
-
 tape.test('express as middleware, with bodyParser middleware', function(t)
 {
   var server
@@ -51,7 +49,7 @@ tape.test('express as middleware, with bodyParser middleware', function(t)
   // plug-in request handlers
   Object.keys(common.requests).forEach(function(id)
   {
-    app.use(path.join(common.server.endpoint, id), agnostic(common.requests[id].requestHandler));
+    app.use([common.server.endpoint, id].join('/'), agnostic(common.requests[id].requestHandler));
   });
 
   // start the server

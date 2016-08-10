@@ -1,5 +1,4 @@
-var path     = require('path')
-  , restify  = require('restify')
+var restify  = require('restify')
   , tape     = require('tape')
   , common   = require('./common.js')
   , agnostic = require('../')
@@ -17,9 +16,12 @@ tape.test('restify as route, no parser', function(t)
   // plug-in request handlers
   Object.keys(common.requests).forEach(function(id)
   {
-    server.get(path.join(common.server.endpoint, id), agnostic(common.requests[id].requestHandler));
-    server.head(path.join(common.server.endpoint, id), agnostic(common.requests[id].requestHandler));
-    server.post(path.join(common.server.endpoint, id), agnostic(common.requests[id].requestHandler));
+    var endpoint = [common.server.endpoint, id].join('/')
+      , handler  = agnostic(common.requests[id].requestHandler)
+      ;
+    server.get(endpoint, handler);
+    server.head(endpoint, handler);
+    server.post(endpoint, handler);
   });
 
   // start the server
@@ -49,9 +51,12 @@ tape.test('restify as route, with bodyParser middleware', function(t)
   // plug-in request handlers
   Object.keys(common.requests).forEach(function(id)
   {
-    server.get(path.join(common.server.endpoint, id), agnostic(common.requests[id].requestHandler));
-    server.head(path.join(common.server.endpoint, id), agnostic(common.requests[id].requestHandler));
-    server.post(path.join(common.server.endpoint, id), agnostic(common.requests[id].requestHandler));
+    var endpoint = [common.server.endpoint, id].join('/')
+      , handler  = agnostic(common.requests[id].requestHandler)
+      ;
+    server.get(endpoint, handler);
+    server.head(endpoint, handler);
+    server.post(endpoint, handler);
   });
 
   // start the server

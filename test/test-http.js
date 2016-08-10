@@ -1,5 +1,4 @@
-var path     = require('path')
-  , http     = require('http')
+var http     = require('http')
   , tape     = require('tape')
   , common   = require('./common.js')
   , agnostic = require('../')
@@ -12,7 +11,7 @@ tape.test('http.createServer, no parser', function(t)
   // plug-in request handlers
   Object.keys(common.requests).forEach(function(id)
   {
-    endpoints[path.join(common.server.endpoint, id)] = agnostic(common.requests[id].requestHandler);
+    endpoints[[common.server.endpoint, id].join('/')] = agnostic(common.requests[id].requestHandler);
   });
 
   server = http.createServer(function(req, res)
