@@ -1,4 +1,4 @@
-# agnostic
+# agnostic [![NPM Module](https://img.shields.io/npm/v/agnostic.svg?style=flat)](https://www.npmjs.com/package/agnostic)
 
 A library that allows other projects to be agnostic of particular http server implementation.
 
