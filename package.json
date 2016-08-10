@@ -7,7 +7,11 @@
     "lint": "eslint *.js adapters/*.js lib/*.js test/*.js",
     "test": "istanbul cover tape -- test/test-*.js | tap-spec",
     "win-test": "tape test/test-*.js | tap-spec",
-    "debug": "tape test/test-*.js | tap-spec"
+    "debug": "tape test/test-*.js | tap-spec",
+    "get-version": "node -e \"console.log(require('./package.json').version)\"",
+    "update-readme": "sed -i.bak 's/\\/master\\.svg/\\/v'$(npm --silent run get-version)'.svg/g' README.md",
+    "restore-readme": "mv README.md.bak README.md",
+    "prepublish": "in-publish && npm run update-readme && npm run restore-readme || true"
   },
   "pre-commit": [
     "lint",

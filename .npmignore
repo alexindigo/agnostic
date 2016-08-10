@@ -5,4 +5,5 @@ test
 appveyor.yml
 
 .*
+*.bak
 *.log
