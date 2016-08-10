@@ -1,45 +1,47 @@
-var http   = require('http')
-  , tape   = require('tape')
-  , common = require('./common.js')
-  , Fbbot  = require('../')
+var path     = require('path')
+  , http     = require('http')
+  , tape     = require('tape')
+  , common   = require('./common.js')
+  , agnostic = require('../')
   ;
 
-tape.test('http.createServer minimal setup', function(t)
+tape.test('http.createServer, no parser', function(t)
 {
-  t.plan(2);
+  var server, endpoints = {};
 
-  var server, fbbot  = new Fbbot(common.fbbot);
-
-  // get events
-  fbbot.on('message', function(user, message)
+  // plug-in request handlers
+  Object.keys(common.requests).forEach(function(id)
   {
-
+    endpoints[path.join(common.server.endpoint, id)] = agnostic(common.requests[id].requestHandler);
   });
 
-  // plug-in fbbot
-  server = http.createServer(fbbot.requestHandler);
+  server = http.createServer(function(req, res)
+  {
+    var url = req.url.split('?')[0];
+
+    if (typeof endpoints[url] == 'function')
+    {
+      endpoints[url](req, res);
+      return;
+    }
+
+    t.fail('It should not be like this :(');
+  });
 
   // start the server
-  server.listen(common.server.port, function(err)
+  server.listen(common.server.port, function()
   {
-    t.error(err);
-
-    common.sendRequest('text', function(error, response)
+    common.sendAllRequests.call(t, function(error, responded)
     {
-// console.log('\n\n ----- REQUEST', error);
-// console.log('\n\n ----- REQUEST', 'vs', response.statusCode, '--', response.headers);
+      t.error(error);
+
+      t.equal(Object.keys(responded).length, Object.keys(common.requests).length, 'expect same number of responses as requests');
 
       server.close(function()
       {
-        t.ok(true);
+        t.end();
       });
-
     });
   });
 
-});
-
-tape.test.skip('http.createServer minimal setup, manual body parsing', function(t)
-{
-  t.plan(0);
 });

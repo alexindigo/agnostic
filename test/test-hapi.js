@@ -5,7 +5,7 @@ var path   = require('path')
   , agnostic   = require('../')
   ;
 
-tape.test('hapi minimal setup, no parser', function(t)
+tape.test('hapi as route, with default body parser', function(t)
 {
   var server = new Hapi.Server();
 
@@ -17,13 +17,8 @@ tape.test('hapi minimal setup, no parser', function(t)
   {
     // plug-in fbbot
     server.route({
-      method: 'GET',
-      path: path.join(common.server.endpoint, id),
-      handler: agnostic(common.requests[id].requestHandler)
-    });
-    server.route({
-      method: 'POST',
-      path: path.join(common.server.endpoint, id),
+      method : ['GET', 'POST'], // Hapi uses GET handler for HEAD requests
+      path   : path.join(common.server.endpoint, id),
       handler: agnostic(common.requests[id].requestHandler)
     });
   });

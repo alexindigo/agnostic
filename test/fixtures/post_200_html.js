@@ -9,12 +9,15 @@ module.exports = {
 
   requestHandler: function(req, res)
   {
-    res(200, req.body.match(/<body>[^<]+<\/body>/)[0]);
+    res(req.body.match(/<body>[^<]+<\/body>/)[0]);
   },
 
   'expected':
   {
     'status': 200,
-    'body'  : '<body>42</body>'
+    'body'  : '<body>42</body>',
+    'headers': {
+      'content-type': 'text/html'
+    }
   }
 };

@@ -1,4 +1,3 @@
-
 // Public API
 module.exports = {
   request : requestAdapter,
@@ -10,11 +9,15 @@ module.exports = {
  * makes request object into lowest common denominator
  *
  * @this    agnostic.options
- * @param   {http.IncomingMessage} request - request object as seen in Express
+ * @param   {EventEmitter} request - request object as tailored for agnostic request handlers
+ * @param   {http.IncomingMessage} rawRequest - request object as seen in Express
  * @returns {object} - server agnostic request object
  */
-function requestAdapter(request)
+function requestAdapter(request, rawRequest)
 {
+  // Express cuts off urls within middleware
+  request.url = rawRequest.originalUrl;
+
   return request;
 }
 
@@ -30,5 +33,5 @@ function responseAdapter(response, code, content, options)
 {
   // Buffer -> ??? -> application/octet-stream
   // check express
-  response.status(code).set(options.headers || {}).send(content);
+  response.status(code).set(options.headers).send(content);
 }

@@ -86,16 +86,16 @@ function requestHandlerAdapter(requestHandler, rawRequest, rawResponse)
   }
 
   // invoke chosen adapter with normalized body
-  normalize.request.call(this, rawRequest, function(error)
+  normalize.request.call(this, rawRequest, function(error, request)
   {
     if (error)
     {
       // terminate earlier – as input error
-      normalize.response.call(this, adapter.response, rawResponse)(400);
+      normalize.response.call(this, adapter.response, rawResponse, request)(400);
       return;
     }
 
-    requestHandler(adapter.request.call(this, rawRequest), normalize.response.call(this, adapter.response, rawResponse));
+    requestHandler(adapter.request.call(this, request, rawRequest), normalize.response.call(this, adapter.response, rawResponse, request));
 
   }.bind(this));
 }

@@ -39,8 +39,6 @@ glob.sync(path.join(__dirname, './fixtures/*.js')).forEach(function(file)
  */
 function requestHandler(request, respond)
 {
-console.log('GOT', request.body);
-
   respond(200, {ok: 'dokey'});
 }
 
@@ -76,6 +74,7 @@ function sendRequestByName(name, callback)
  *
  * @this  test
  * @param {object} config - config for the request
+ * @param {string} id - name of the config
  * @param {function} callback - invoke on response from the simulated server
  */
 function sendRequest(config, id, callback)
@@ -101,7 +100,15 @@ function sendRequest(config, id, callback)
 
     this.equal(response.statusCode, config.expected.status, 'expected response with the ' + config.expected.status + ' status code');
 
-    if (!config.expected.body)
+    if (config.expected.headers)
+    {
+      Object.keys(config.expected.headers).forEach(function(name)
+      {
+        this.ok(response.headers[name].indexOf(config.expected.headers[name]) != -1, 'expect `' + name + '` header to contain `' + config.expected.headers[name] + '`');
+      }.bind(this));
+    }
+
+    if (!('body' in config.expected))
     {
       // shortcut here
       callback(null, response);

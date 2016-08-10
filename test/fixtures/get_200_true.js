@@ -2,19 +2,20 @@ module.exports = {
   'method': 'GET',
   'headers': {
     'host': 'localhost',
-    'accept': '*/*'
+    'accept': '*/*',
   },
 
   requestHandler: function(req, res)
   {
-    res(404);
+    res(true);
   },
 
   'expected':
   {
-    'status': 404,
-    'body'  : 'Not Found',
-    'headers': {
+    'status': 200,
+    'body'  : '1',
+    headers :
+    {
       'content-type': 'text/plain'
     }
   }

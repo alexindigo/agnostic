@@ -17,6 +17,9 @@ module.exports = {
   'expected':
   {
     'status': 200,
-    'body'  : '{"object":126}'
+    'body'  : '{"object":126}',
+    'headers': {
+      'content-type': 'application/json'
+    }
   }
 };

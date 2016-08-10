@@ -33,9 +33,8 @@ module.exports =
   {
     'object'   : JSON.stringify,
     'array'    : JSON.stringify,
-    // send null and undefined as empty strings
+    // send null as empty strings
     'null'     : '',
-    'undefined': '',
     // send booleans as 0 or 1
     'boolean'  : function(b) { return b ? '1' : '0'; }
   },
@@ -45,6 +44,7 @@ module.exports =
   {
     'string': 'text/html',
     'object': 'application/json',
-    'array' : 'application/json'
+    'array' : 'application/json',
+    'buffer': 'application/octet-stream'
   }
 };

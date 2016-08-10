@@ -1,3 +1,5 @@
+var util = require('util');
+
 module.exports = {
   'method': 'GET',
   'headers': {
@@ -14,6 +16,9 @@ module.exports = {
   'expected':
   {
     'status': 200,
-    'body'  : '84'
+    'body'  : '84',
+    'headers': {
+      'content-type': 'text/plain'
+    }
   }
 };
