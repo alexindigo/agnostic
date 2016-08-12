@@ -12,6 +12,6 @@ script:
   # linting
   - npm run lint
   # nodejs testing
-  - npm run test
+  - npm run compat
 after_success:
   - "cat coverage/lcov.info | ./node_modules/.bin/coveralls"

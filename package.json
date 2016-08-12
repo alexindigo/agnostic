@@ -7,6 +7,7 @@
     "lint": "eslint *.js adapters/*.js lib/*.js test/*.js",
     "test": "istanbul cover tape -- test/test-*.js | tap-spec",
     "win-test": "tape test/test-*.js | tap-spec",
+    "compat": "node compatibility.js",
     "debug": "tape test/test-*.js | tap-spec",
     "get-version": "node -e \"console.log(require('./package.json').version)\"",
     "update-readme": "sed -i.bak 's/\\/master\\.svg/\\/v'$(npm --silent run get-version)'.svg/g' README.md",
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "asynckit": "^0.4.0",
+    "batcher": "^1.0.1",
     "body-parser": "^1.15.2",
     "coveralls": "^2.11.12",
     "eslint": "^2.13.1",

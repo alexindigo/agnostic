@@ -11,7 +11,7 @@ A library that allows other projects to be agnostic of particular http server im
 
 [![express](https://img.shields.io/badge/express-3.x--4.x-brightgreen.svg?style=flat)](http://expressjs.com)
 [![restify](https://img.shields.io/badge/restify-2.x--4.x-brightgreen.svg?style=flat)](http://restify.com)
-[![hapi](https://img.shields.io/badge/hapi-10.x--14.x-brightgreen.svg?lstyle=flat)](http://hapijs.com)
+[![hapi](https://img.shields.io/badge/hapi-8.x--14.x-brightgreen.svg?lstyle=flat)](http://hapijs.com)
 [![http](https://img.shields.io/badge/http-0.12.x--6.x-brightgreen.svg?style=flat)](https://nodejs.org/api/http.html)
 
 <!-- [![Readme](https://img.shields.io/badge/readme-tested-brightgreen.svg?style=flat)](https://www.npmjs.com/package/reamde) -->
@@ -71,7 +71,7 @@ server.post('/my-endpoint', coolLib);
 server.listen(1337);
 ```
 
-### Hapi [![hapi](https://img.shields.io/badge/hapi-10.x--14.x-brightgreen.svg?lstyle=flat)](http://hapijs.com)
+### Hapi [![hapi](https://img.shields.io/badge/hapi-8.x--14.x-brightgreen.svg?lstyle=flat)](http://hapijs.com)
 
 ```javascript
 var restify = require('restify');
