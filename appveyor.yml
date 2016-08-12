@@ -14,7 +14,6 @@ install:
 test_script:
   - node --version
   - npm --version
-  - npm run win-test
   - npm run compat
 build: off
 matrix:

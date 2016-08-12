@@ -9,16 +9,16 @@ A library that allows other projects to be agnostic of particular http server im
 [![Dependency Status](https://img.shields.io/david/alexindigo/agnostic/master.svg?style=flat)](https://david-dm.org/alexindigo/agnostic)
 <!-- [![bitHound Overall Score](https://www.bithound.io/github/alexindigo/agnostic/badges/score.svg)](https://www.bithound.io/github/alexindigo/agnostic) -->
 
-[![express](https://img.shields.io/badge/express-3.x--4.x-brightgreen.svg?style=flat)](http://expressjs.com)
+<!-- [![express](https://img.shields.io/badge/express-3.x--4.x-brightgreen.svg?style=flat)](http://expressjs.com)
 [![restify](https://img.shields.io/badge/restify-2.x--4.x-brightgreen.svg?style=flat)](http://restify.com)
 [![hapi](https://img.shields.io/badge/hapi-8.x--14.x-brightgreen.svg?lstyle=flat)](http://hapijs.com)
-[![http](https://img.shields.io/badge/http-0.12.x--6.x-brightgreen.svg?style=flat)](https://nodejs.org/api/http.html)
+[![http](https://img.shields.io/badge/http-0.12.x--6.x-brightgreen.svg?style=flat)](https://nodejs.org/api/http.html) -->
 
 <!-- [![Readme](https://img.shields.io/badge/readme-tested-brightgreen.svg?style=flat)](https://www.npmjs.com/package/reamde) -->
 
 *Notice of change of ownership: Starting version 1.0.0 this package has changed it's owner and goals. Old version (0.0.0) is still available on npm via `npm install agnostic@0.0.0` or on [github](https://github.com/dtudury/agnostic). Thank you.*
 
-| http servers |          v0.12 |             v3 |                                     v4 |                                     v5 |                                     v6 |
+| http servers |          v0.12 |          io.js |                                     v4 |                                     v5 |                                     v6 |
 | :--          |            --: |            --: |                                    --: |                                    --: |                                    --: |
 | express      |       3.x, 4.x |       3.x, 4.x |                               3.x, 4.x |                               3.x, 4.x |                               3.x, 4.x |
 | restify      |  2.x, 3.x, 4.x |  2.x, 3.x, 4.x |                          2.x, 3.x, 4.x |                          2.x, 3.x, 4.x |                          2.x, 3.x, 4.x |
