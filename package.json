@@ -53,7 +53,7 @@
     "eslint": "^2.13.1",
     "express": "^4.14.0",
     "glob": "^7.0.5",
-    "hapi": "^10.5.0",
+    "hapi": "^9.5.1",
     "hyperquest": "^2.0.0",
     "in-publish": "^2.0.0",
     "istanbul": "^0.4.4",
