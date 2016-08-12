@@ -18,6 +18,13 @@ A library that allows other projects to be agnostic of particular http server im
 
 *Notice of change of ownership: Starting version 1.0.0 this package has changed it's owner and goals. Old version (0.0.0) is still available on npm via `npm install agnostic@0.0.0` or on [github](https://github.com/dtudury/agnostic). Thank you.*
 
+| http servers |          v0.12 |             v3 |                                     v4 |                                     v5 |                                     v6 |
+| :--          |            --: |            --: |                                    --: |                                    --: |                                    --: |
+| express      |       3.x, 4.x |       3.x, 4.x |                               3.x, 4.x |                               3.x, 4.x |                               3.x, 4.x |
+| restify      |  2.x, 3.x, 4.x |  2.x, 3.x, 4.x |                          2.x, 3.x, 4.x |                          2.x, 3.x, 4.x |                          2.x, 3.x, 4.x |
+| hapi         | 8.x, 9.x, 10.x | 8.x, 9.x, 10.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x |
+| http         |              ✓ |              ✓ |                                      ✓ |                                      ✓ |                                      ✓ |
+
 ## Install
 
 ```

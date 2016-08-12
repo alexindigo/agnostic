@@ -18,7 +18,7 @@ versions.forEach(function(v)
 
 commands = Object.keys(supported).map(function(name)
 {
-  return batcher.forEach({ name: name, version: supported[name] }).command('npm install ${name}@${version} && tape test/test-${name}*.js | tap-spec');
+  return batcher.forEach({ name: name, version: supported[name] }).command('npm install ${name}@${version} && istanbul cover --include-pid tape -- test/test-${name}*.js | tap-spec');
 });
 
 // run all the versions one by one
