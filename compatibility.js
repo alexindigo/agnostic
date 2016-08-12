@@ -1,9 +1,21 @@
-var batcher  = require('batcher')
+var os       = require('os')
+  , batcher  = require('batcher')
   , grid     = require('./compatibility.json')
   , versions = process.versions.node.split('.')
   , supported
-  , commands
+  , jobs
+  , command
   ;
+
+// istanbul doesn't play nice on windows
+if (os.platform() == 'win32')
+{
+  command = 'npm install ${name}@${version} && tape test/test-${name}*.js | tap-spec';
+}
+else
+{
+  command = 'npm install ${name}@${version} && istanbul cover --include-pid tape -- test/test-${name}*.js | tap-spec';
+}
 
 // find most specific version
 versions.forEach(function(v)
@@ -16,10 +28,10 @@ versions.forEach(function(v)
   }
 });
 
-commands = Object.keys(supported).map(function(name)
+jobs = Object.keys(supported).map(function(name)
 {
-  return batcher.forEach({ name: name, version: supported[name] }).command('npm install ${name}@${version} && istanbul cover --include-pid tape -- test/test-${name}*.js | tap-spec');
+  return batcher.forEach({ name: name, version: supported[name] }).command(command);
 });
 
 // run all the versions one by one
-batcher(commands);
+batcher(jobs);
