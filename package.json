@@ -4,7 +4,7 @@
   "description": "A library that allows other projects to be agnostic of particular http server implementation",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint *.js adapters/*.js lib/*.js test/*.js",
+    "lint": "eslint *.js adapters/*.js lib/*.js test/**/*.js",
     "test": "istanbul cover tape -- test/test-*.js | tap-spec",
     "win-test": "tape test/test-*.js | tap-spec",
     "precompat": "rimraf coverage compat-coverage",

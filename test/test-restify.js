@@ -6,7 +6,7 @@ var restify  = require('restify')
   , bodyParserOptions = { maxBodySize: 1024 * 1000 }
   ;
 
-// TODO: server.use(restify.queryParser());
+// Restify options
 // https://gist.github.com/LeCoupa/0664e885fd74152d1f90
 
 tape.test('restify as route, no parser', function(t)
