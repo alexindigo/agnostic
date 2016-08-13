@@ -1,13 +1,13 @@
 # agnostic [![NPM Module](https://img.shields.io/npm/v/agnostic.svg?style=flat)](https://www.npmjs.com/package/agnostic)
 
 A library that allows other projects to be agnostic of particular http server implementation.
-<!--
+
 [![Linux Build](https://img.shields.io/travis/alexindigo/agnostic/master.svg?label=linux:0.12-6.x&style=flat)](https://travis-ci.org/alexindigo/agnostic)
 [![Windows Build](https://img.shields.io/appveyor/ci/alexindigo/agnostic/master.svg?label=windows:0.12-6.x&style=flat)](https://ci.appveyor.com/project/alexindigo/agnostic)
 
 [![Coverage Status](https://img.shields.io/coveralls/alexindigo/agnostic/master.svg?label=code+coverage&style=flat)](https://coveralls.io/github/alexindigo/agnostic?branch=master)
 [![Dependency Status](https://img.shields.io/david/alexindigo/agnostic/master.svg?style=flat)](https://david-dm.org/alexindigo/agnostic)
--->
+
 [![bitHound Overall Score](https://www.bithound.io/github/alexindigo/agnostic/badges/score.svg)](https://www.bithound.io/github/alexindigo/agnostic)
 
 <!-- [![express](https://img.shields.io/badge/express-3.x--4.x-brightgreen.svg?style=flat)](http://expressjs.com)
