@@ -10,11 +10,6 @@ A library that allows other projects to be agnostic of particular http server im
 
 [![bitHound Overall Score](https://www.bithound.io/github/alexindigo/agnostic/badges/score.svg)](https://www.bithound.io/github/alexindigo/agnostic)
 
-<!-- [![express](https://img.shields.io/badge/express-3.x--4.x-brightgreen.svg?style=flat)](http://expressjs.com)
-[![restify](https://img.shields.io/badge/restify-2.x--4.x-brightgreen.svg?style=flat)](http://restify.com)
-[![hapi](https://img.shields.io/badge/hapi-8.x--14.x-brightgreen.svg?lstyle=flat)](http://hapijs.com)
-[![http](https://img.shields.io/badge/http-0.12.x--6.x-brightgreen.svg?style=flat)](https://nodejs.org/api/http.html) -->
-
 <!-- [![Readme](https://img.shields.io/badge/readme-tested-brightgreen.svg?style=flat)](https://www.npmjs.com/package/reamde) -->
 
 *Notice of change of ownership: Starting version 1.0.0 this package has changed it's owner and goals. Old version (0.0.0) is still available on npm via `npm install agnostic@0.0.0` or on [github](https://github.com/dtudury/agnostic). Thank you.*
@@ -83,7 +78,7 @@ server.listen(1337);
 ### Hapi [![hapi](https://img.shields.io/badge/hapi-8.x--14.x-brightgreen.svg?lstyle=flat)](http://hapijs.com)
 
 ```javascript
-var restify = require('hapi');
+var Hapi = require('hapi');
 var coolLib = require('above-cool-lib');
 
 var server = new Hapi.Server();
@@ -122,4 +117,4 @@ Or open an [issue](https://github.com/alexindigo/agnostic/issues) with questions
 
 ## License
 
-Agnostic is licensed under the MIT license.
+Agnostic is released under the [MIT](LICENSE) license.
