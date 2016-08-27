@@ -1,6 +1,6 @@
 {
   "name": "agnostic",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A library that allows other projects to be agnostic of particular http server implementation",
   "main": "index.js",
   "scripts": {
