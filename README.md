@@ -14,13 +14,15 @@ A library that allows other projects to be agnostic of particular http server im
 
 *Notice of change of ownership: Starting version 1.0.0 this package has changed it's owner and goals. Old version (0.0.0) is still available on npm via `npm install agnostic@0.0.0` or on [github](https://github.com/dtudury/agnostic). Thank you.*
 
-| node / libs |        express |        restify |                                         hapi | http |
-| :--         | :--            | :--            |                                          :-- | :--  |
-| v0.12       |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x                               |  ✓   |
-| io.js       |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x                               |  ✓   |
-| v4          |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x, 15.x |  ✓   |
-| v5          |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x, 15.x |  ✓   |
-| v6          |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x, 15.x |  ✓   |
+
+| node / libs |  express |        restify |                                         hapi | http |
+| :--         | :--      | :--            | :--                                          | :--  |
+| v0.12       | 3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x                               |  ✓   |
+| io.js       | 3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x                               |  ✓   |
+| v4          | 3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x, 15.x |  ✓   |
+| v5          | 3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x, 15.x |  ✓   |
+| v6          | 3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x, 15.x |  ✓   |
+
 
 ## Install
 
