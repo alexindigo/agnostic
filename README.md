@@ -39,7 +39,7 @@ module.exports = agnostic(myRequestHandler);
 
 function myRequestHandler(request, respond)
 {
-  // do cool thing
+  // do cool things
   // `respond` is a function with the following signature:
   // `respond([code], [content[, options]]);`
 }
@@ -75,7 +75,7 @@ server.post('/my-endpoint', coolLib);
 server.listen(1337);
 ```
 
-### Hapi [![hapi](https://img.shields.io/badge/hapi-8.x--14.x-brightgreen.svg?lstyle=flat)](http://hapijs.com)
+### Hapi [![hapi](https://img.shields.io/badge/hapi-8.x--15.x-brightgreen.svg?lstyle=flat)](http://hapijs.com)
 
 ```javascript
 var Hapi = require('hapi');
