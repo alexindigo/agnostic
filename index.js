@@ -1,15 +1,14 @@
 var IncomingMessage = require('http').IncomingMessage
-  , EventEmitter    = require('events').EventEmitter
     // helpers
-  , merge     = require('deeply')
+  , merge           = require('deeply')
     // modules
-  , defaults  = require('./defaults.js')
-  , normalize = require('./lib/normalize.js')
+  , defaults        = require('./defaults.js')
+  , normalize       = require('./lib/normalize.js')
     // adapters
-  , express   = require('./adapters/express.js')
-  , hapi      = require('./adapters/hapi.js')
-  , http      = require('./adapters/http.js')
-  , restify   = require('./adapters/restify.js')
+  , express         = require('./adapters/express.js')
+  , hapi            = require('./adapters/hapi.js')
+  , http            = require('./adapters/http.js')
+  , restify         = require('./adapters/restify.js')
   ;
 
 // Public API
@@ -68,21 +67,17 @@ function requestHandlerAdapter(requestHandler, rawRequest, rawResponse)
       adapter = http;
     }
   }
-  // or be black sheep
-  else if (rawRequest instanceof EventEmitter)
+  // or hapi-like
+  else if (typeof rawRequest.server == 'object' && typeof rawRequest.server.info == 'object')
   {
-    // hapijs
-    if (typeof rawRequest.server == 'object' && typeof rawRequest.server.info == 'object')
-    {
-      rawRequest.serverName = 'hapi';
-      adapter = hapi;
-    }
+    rawRequest.serverName = 'hapi';
+    adapter = hapi;
   }
 
   if (!adapter)
   {
     // nothing found, booo
-    throw new TypeError('agnostic: Unsupported http server type. Please open new issue to add support for your server.');
+    throw new TypeError('agnostic: Unsupported http server type. Please open new issue to add support for your server. https://github.com/alexindigo/agnostic/issues');
   }
 
   // invoke chosen adapter with normalized body

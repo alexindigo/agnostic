@@ -3,24 +3,24 @@
 A library that allows other projects to be agnostic of particular http server implementation.
 
 [![Linux Build](https://img.shields.io/travis/alexindigo/agnostic/master.svg?label=linux:0.12-6.x&style=flat)](https://travis-ci.org/alexindigo/agnostic)
+[![MacOS Build](https://img.shields.io/travis/alexindigo/agnostic/master.svg?label=macos:0.12-6.x&style=flat)](https://travis-ci.org/alexindigo/agnostic)
 [![Windows Build](https://img.shields.io/appveyor/ci/alexindigo/agnostic/master.svg?label=windows:0.12-6.x&style=flat)](https://ci.appveyor.com/project/alexindigo/agnostic)
 
 [![Coverage Status](https://img.shields.io/coveralls/alexindigo/agnostic/master.svg?label=code+coverage&style=flat)](https://coveralls.io/github/alexindigo/agnostic?branch=master)
 [![Dependency Status](https://img.shields.io/david/alexindigo/agnostic/master.svg?style=flat)](https://david-dm.org/alexindigo/agnostic)
-
 [![bitHound Overall Score](https://www.bithound.io/github/alexindigo/agnostic/badges/score.svg)](https://www.bithound.io/github/alexindigo/agnostic)
 
 <!-- [![Readme](https://img.shields.io/badge/readme-tested-brightgreen.svg?style=flat)](https://www.npmjs.com/package/reamde) -->
 
 *Notice of change of ownership: Starting version 1.0.0 this package has changed it's owner and goals. Old version (0.0.0) is still available on npm via `npm install agnostic@0.0.0` or on [github](https://github.com/dtudury/agnostic). Thank you.*
 
-| node / libs |        express |        restify |                                   hapi | http |
-| :--         | :--            | :--            |                            :--         | :--  |
-| v0.12       |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x                         |  ✓   |
-| io.js       |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x                         |  ✓   |
-| v4          |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x |  ✓   |
-| v5          |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x |  ✓   |
-| v6          |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x |  ✓   |
+| node / libs |        express |        restify |                                         hapi | http |
+| :--         | :--            | :--            |                                          :-- | :--  |
+| v0.12       |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x                               |  ✓   |
+| io.js       |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x                               |  ✓   |
+| v4          |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x, 15.x |  ✓   |
+| v5          |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x, 15.x |  ✓   |
+| v6          |       3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x, 15.x |  ✓   |
 
 ## Install
 
