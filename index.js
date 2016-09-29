@@ -83,14 +83,19 @@ function requestHandlerAdapter(requestHandler, rawRequest, rawResponse)
   // invoke chosen adapter with normalized body
   normalize.request.call(this, rawRequest, function(error, request)
   {
+    var adaptedRequest, normalizedResponse;
+
     if (error)
     {
       // terminate earlier – as input error
-      normalize.response.call(this, adapter.response, rawResponse, request)(400);
+      normalize.response.call(this, adapter.response, rawResponse, request)(error.statusCode || error.status || 400, error.message);
       return;
     }
 
-    requestHandler(adapter.request.call(this, request, rawRequest), normalize.response.call(this, adapter.response, rawResponse, request));
+    adaptedRequest     = adapter.request.call(this, request, rawRequest);
+    normalizedResponse = normalize.response.call(this, adapter.response, rawResponse, request);
+
+    requestHandler(adaptedRequest, normalizedResponse);
 
   }.bind(this));
 }

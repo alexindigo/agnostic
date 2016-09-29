@@ -16,9 +16,15 @@ tape.test('hapi as route, with default body parser', function(t)
   {
     // plug-in fbbot
     server.route({
-      method : ['GET', 'POST'], // Hapi uses GET handler for HEAD requests
+      method : 'GET', // Hapi uses GET handler for HEAD requests
       path   : [common.server.endpoint, id].join('/'),
       handler: agnostic(common.requests[id].requestHandler)
+    });
+    server.route({
+      method : 'POST',
+      path   : [common.server.endpoint, id].join('/'),
+      handler: agnostic(common.requests[id].requestHandler),
+      config : {payload: {maxBytes: 100}}
     });
   });
 
@@ -27,7 +33,7 @@ tape.test('hapi as route, with default body parser', function(t)
   {
     t.error(err);
 
-    common.sendAllRequests.call(t, function(error, responded)
+    common.sendAllRequests.call(t, 'hapi', function(error, responded)
     {
       t.error(error);
 

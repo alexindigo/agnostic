@@ -4,7 +4,7 @@ var express    = require('express')
   , common     = require('./common.js')
   , agnostic   = require('../')
 
-  , bodyParserOptions = { limit: 1024 * 1000 }
+  , bodyParserOptions = { limit: 100 }
   ;
 
 tape.test('express as middleware, no parser', function(t)
@@ -22,7 +22,7 @@ tape.test('express as middleware, no parser', function(t)
   // start the server
   server = app.listen(common.server.port, function()
   {
-    common.sendAllRequests.call(t, function(error, responded)
+    common.sendAllRequests.call(t, 'express', function(error, responded)
     {
       t.error(error);
 
@@ -55,7 +55,7 @@ tape.test('express as middleware, with bodyParser middleware', function(t)
   // start the server
   server = app.listen(common.server.port, function()
   {
-    common.sendAllRequests.call(t, function(error, responded)
+    common.sendAllRequests.call(t, 'express', function(error, responded)
     {
       t.error(error);
 

@@ -5,16 +5,14 @@ environment:
     - nodejs_version: '4'
     - nodejs_version: '5'
     - nodejs_version: '6'
-platform:
-  - x86
-  - x64
 install:
-  - ps: Install-Product node $env:nodejs_version $env:platform
+  - ps: Install-Product node $env:nodejs_version
   - npm install
 test_script:
   - node --version
   - npm --version
   - npm run compat
 build: off
+version: "{build}"
 matrix:
   fast_finish: true

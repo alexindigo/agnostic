@@ -3,7 +3,7 @@ var restify  = require('restify')
   , common   = require('./common.js')
   , agnostic = require('../')
 
-  , bodyParserOptions = { maxBodySize: 1024 * 1000 }
+  , bodyParserOptions = { maxBodySize: 100 }
   ;
 
 // Restify options
@@ -27,7 +27,7 @@ tape.test('restify as route, no parser', function(t)
   // start the server
   server.listen(common.server.port, function()
   {
-    common.sendAllRequests.call(t, function(error, responded)
+    common.sendAllRequests.call(t, 'restify', function(error, responded)
     {
       t.error(error);
 
@@ -62,7 +62,7 @@ tape.test('restify as route, with bodyParser middleware', function(t)
   // start the server
   server.listen(common.server.port, function()
   {
-    common.sendAllRequests.call(t, function(error, responded)
+    common.sendAllRequests.call(t, 'restify', function(error, responded)
     {
       t.error(error);
 

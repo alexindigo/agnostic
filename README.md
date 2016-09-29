@@ -15,7 +15,7 @@ A library that allows other projects to be agnostic of particular http server im
 *Notice of change of ownership: Starting version 1.0.0 this package has changed it's owner and goals. Old version (0.0.0) is still available on npm via `npm install agnostic@0.0.0` or on [github](https://github.com/dtudury/agnostic). Thank you.*
 
 
-| node / libs |  express |        restify |                                         hapi | http |
+| node / libs |  express | restify        | hapi                                         | http |
 | :--         | :--      | :--            | :--                                          | :--  |
 | v0.12       | 3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x                               |  ✓   |
 | io.js       | 3.x, 4.x |  2.x, 3.x, 4.x | 8.x, 9.x, 10.x                               |  ✓   |
@@ -39,11 +39,20 @@ var agnostic = require('agnostic');
 
 module.exports = agnostic(myRequestHandler);
 
+/**
+ * Does cool things
+ *
+ * @param {EventEmitter} request - request object, mimicking IncomingMessage
+ * @param {Function} respond - callback to respond to the request
+ */
 function myRequestHandler(request, respond)
 {
   // do cool things
+  // `request.body` - parsed request body
+  // `request.query` - parsed query string
   // `respond` is a function with the following signature:
   // `respond([code], [content[, options]]);`
+  respond(200, 'Received hit to ' + request.url, {headers: {'X-Powered-By': 'AllCoolThings'}});
 }
 ```
 

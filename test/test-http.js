@@ -30,7 +30,7 @@ tape.test('http.createServer, no parser', function(t)
   // start the server
   server.listen(common.server.port, function()
   {
-    common.sendAllRequests.call(t, function(error, responded)
+    common.sendAllRequests.call(t, 'http', function(error, responded)
     {
       t.error(error);
 
